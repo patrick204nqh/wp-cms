@@ -1,0 +1,11 @@
+Dockerfile
+.dockerignore
+
+*.sql--
+
+.gitignore
+.git
+
+README.md
+
+wp-content/uploads
