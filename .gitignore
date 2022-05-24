@@ -3,4 +3,5 @@
 
 .workflow.properties
 
-wp-content/uploads
+vendor/
+wp-content/
