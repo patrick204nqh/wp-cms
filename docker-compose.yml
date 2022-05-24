@@ -12,6 +12,8 @@ services:
       MYSQL_DATABASE: wpcms
       MYSQL_USER: patrick
       MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
 
   wordpress:
     depends_on:
@@ -19,7 +21,8 @@ services:
     image: wordpress:latest
     container_name: wordpress
     volumes:
-      - $PWD:/var/www/wordpress
+      - $PWD/docker/wordpress/wp-config.php:/var/www/html/wp-config.php
+      - $PWD/wp-content:/var/www/html/wp-content
     ports:
       - "8000:80"
     restart: always
@@ -29,18 +32,19 @@ services:
       WORDPRESS_DB_PASSWORD: password
       WORDPRESS_DB_NAME: wpcms
 
-  workbench:
-    image: lscr.io/linuxserver/mysql-workbench:latest
-    container_name: workbench
-    restart: unless-stopped
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/London
-    ports:
-      - "3000:3000"
-    cap_add:
-      - IPC_LOCK
+  # workbench:
+  #   image: lscr.io/linuxserver/mysql-workbench:latest
+  #   container_name: workbench
+  #   restart: unless-stopped
+  #   environment:
+  #     - PUID=1000
+  #     - PGID=1000
+  #     - TZ=Europe/London
+  #   ports:
+  #     - "3000:3000"
+  #   cap_add:
+  #     - IPC_LOCK
 
 volumes:
   db_data: {}
+  wordpress_plugins: {}
