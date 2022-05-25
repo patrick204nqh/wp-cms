@@ -1,19 +1,26 @@
 version: "3.9"
 
-services:
-  composer:
-    image: composer
-    container_name: composer
-    command: update
-    volumes:
-      - $PWD:/app
+x-wp: &wp-default
+  volumes:
+    - $PWD/docker/wordpress/wp-config.php:/var/www/html/wp-config.php
+    - $PWD/wp-content:/var/www/html/wp-content
+    - $PWD/composer.json:/var/www/html/composer.json
+    - $PWD/composer.lock:/var/www/html/composer.lock
+    - wordpress_data:/var/www/html
+  environment:
+    WORDPRESS_DB_HOST: db
+    WORDPRESS_DB_USER: patrick
+    WORDPRESS_DB_PASSWORD: password
+    WORDPRESS_DB_NAME: wpcms
 
+
+services:
   db:
     image: mysql:8.0
     container_name: mysql
+    restart: always
     volumes:
       - db_data:/var/lib/mysql
-    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: wpcms
@@ -22,23 +29,30 @@ services:
     ports:
       - "3306:3306"
 
+
   wordpress:
+    <<: *wp-default
     depends_on:
       - composer
       - db
-    image: wordpress:latest
+    image: patrick204nqh/wpcms:latest
+    build: .
     container_name: wordpress
-    volumes:
-      - $PWD/docker/wordpress/wp-config.php:/var/www/html/wp-config.php
-      - $PWD/wp-content:/var/www/html/wp-content
+    restart: always
     ports:
       - "8000:80"
-    restart: always
-    environment:
-      WORDPRESS_DB_HOST: db
-      WORDPRESS_DB_USER: patrick
-      WORDPRESS_DB_PASSWORD: password
-      WORDPRESS_DB_NAME: wpcms
+
+
+  wordpress-cli:
+    <<: *wp-default
+    depends_on:
+      - wordpress
+    image: wordpress:cli
+    container_name: wordpress-cli
+    tty: true
+    user: 1000:1000
+    command: tail -f /dev/null
+
 
   # workbench:
   #   image: lscr.io/linuxserver/mysql-workbench:latest
@@ -53,6 +67,7 @@ services:
   #   cap_add:
   #     - IPC_LOCK
 
+
 volumes:
   db_data: {}
-  wordpress_plugins: {}
+  wordpress_data: {}
