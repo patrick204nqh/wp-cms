@@ -12,12 +12,9 @@
 		"wp-graphql/wp-graphql": "1.8.2",
 		"wp-graphql/wp-graphql-jwt-authentication": "0.4.0",
 		"pristas-peter/wp-graphql-gutenberg": "0.3.7",
-		"wpackagist-theme/twentytwenty": "1.9.0",
-		"wpackagist-theme/twentytwentyone": "1.5.0",
-		"wpackagist-theme/twentytwentytwo": "1.1.0",
+		"valu/wp-graphql-offset-pagination": "^0.2",
 		"wpackagist-plugin/advanced-custom-fields": "5.12.2",
-		"wpackagist-plugin/custom-post-type-ui": "1.12.1",
-    "valu/wp-graphql-offset-pagination": "^0.2"
+		"wpackagist-plugin/custom-post-type-ui": "1.12.1"
 	},
 	"extra": {
     "installer-paths": {

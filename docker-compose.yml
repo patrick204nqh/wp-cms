@@ -10,10 +10,10 @@ x-wp: &wp-default
     - $PWD/composer.lock:/var/www/html/composer.lock
     - wordpress_data:/var/www/html
   environment:
-    WORDPRESS_DB_HOST: db
     WORDPRESS_DB_USER: patrick
     WORDPRESS_DB_PASSWORD: password
     WORDPRESS_DB_NAME: wpcms
+    WORDPRESS_DB_HOST: db
 
 
 services:
@@ -25,9 +25,9 @@ services:
       - db_data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: wpcms
       MYSQL_USER: patrick
       MYSQL_PASSWORD: password
+      MYSQL_DATABASE: wpcms
     ports:
       - "3306:3306"
 
