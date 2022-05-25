@@ -19,6 +19,12 @@
 		"wpackagist-plugin/custom-post-type-ui": "1.12.1",
     "valu/wp-graphql-offset-pagination": "^0.2"
 	},
+	"extra": {
+    "installer-paths": {
+        "wp/plugins/{$name}/": ["type:wordpress-plugin"],
+        "wp/themes/{$name}/": ["type:wordpress-theme"]
+    }
+	},
 	"config": {
 		"allow-plugins": {
 			"composer/installers": true

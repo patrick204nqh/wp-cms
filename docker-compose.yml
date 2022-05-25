@@ -3,7 +3,9 @@ version: "3.9"
 x-wp: &wp-default
   volumes:
     - $PWD/docker/wordpress/wp-config.php:/var/www/html/wp-config.php
-    - $PWD/wp-content:/var/www/html/wp-content
+    - $PWD/wp-content/:/var/www/html/wp-content/
+    # - $PWD/wp/plugins/wpcms-custom-plugin/:/var/www/html/wp-content/plugins/wpcms-custom-plugin/
+    - $PWD/wp/themes/wpcms-custom-theme/:/var/www/html/wp-content/themes/wpcms-custom-theme/
     - $PWD/composer.json:/var/www/html/composer.json
     - $PWD/composer.lock:/var/www/html/composer.lock
     - wordpress_data:/var/www/html
