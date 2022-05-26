@@ -3,5 +3,9 @@
 #### Notes:
 - Fix file permissions on wp-content
 ```
-chown -R www-data:www-data wp-content
+# Inside container
+chown -R www-data:www-data [dirname]
+
+# outside container
+sudo chown -R $USER [dirname]
 ```

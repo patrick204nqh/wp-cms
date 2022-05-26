@@ -1,10 +1,10 @@
 <?php
 /*
-Plugin Name: Wpcms Custom Plugin
+Plugin Name: WP-CMS Custom Plugin
 Plugin URI:
 Description:
-Author:
-Version:
+Author: Nguyen Quang Huy <patrick204nqh@gmail.com>
+Version: 1.0.0
 Author URI:
 */
 
