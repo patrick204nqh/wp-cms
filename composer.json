@@ -22,11 +22,14 @@
 		"valu/wp-graphql-offset-pagination": "^0.2",
 		"wpackagist-plugin/advanced-custom-fields": "5.12.2",
 		"wpackagist-plugin/custom-post-type-ui": "1.12.1",
-		"patrick204nqh/wpcms-custom-theme": "*"
+		"tombenner/wp-mvc": "*",
+		"patrick204nqh/wpcms-custom-theme": "*",
+		"patrick204nqh/wpcms-custom-plugin": "*"
 	},
 	"extra": {
     "installer-paths": {
-        "wp-content/themes/{$name}/": ["type:wordpress-theme"]
+        "wp-content/themes/{$name}/": ["type:wordpress-theme"],
+        "wp-content/plugins/{$name}/": ["type:wordpress-plugin"]
     }
 	},
 	"config": {

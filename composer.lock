@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f4f1ab18ac35671a453242ff71d51485",
+    "content-hash": "2de941419aae82f1cc5440d65bf9d696",
     "packages": [
         {
             "name": "appsero/client",
@@ -363,17 +363,43 @@
             "time": "2021-04-14T20:02:50+00:00"
         },
         {
+            "name": "patrick204nqh/wpcms-custom-plugin",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "/var/www/html/packages/wpcms-custom-plugin",
+                "reference": "cabf142c891445ce3a5aab17dac3f4a077b4c94b"
+            },
+            "type": "wordpress-plugin",
+            "autoload": {
+                "psr-4": {
+                    "WpcmsPlugin\\": "app/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Nguyen Quang Huy",
+                    "email": "patrick204nqh@gmail.com"
+                }
+            ],
+            "description": "WP-CMS Plugin",
+            "transport-options": {
+                "symlink": true,
+                "relative": false
+            }
+        },
+        {
             "name": "patrick204nqh/wpcms-custom-theme",
             "version": "dev-main",
             "dist": {
                 "type": "path",
                 "url": "/var/www/html/packages/wpcms-custom-theme",
-                "reference": "592481d21520e246699b661a47fa272fddc81adc"
+                "reference": "a677b9e631ae748919768e7de886ee6b1ec15d5b"
             },
             "type": "wordpress-theme",
             "autoload": {
                 "psr-4": {
-                    "Patrick204nqh\\WpcmsCustomTheme\\": "src/"
+                    "WpcmsTheme\\": "src/"
                 }
             },
             "authors": [
@@ -577,6 +603,30 @@
                 }
             ],
             "time": "2022-03-04T08:16:47+00:00"
+        },
+        {
+            "name": "tombenner/wp-mvc",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "/var/www/html/packages/wp-mvc",
+                "reference": "83d898b19fb0f22d8a251998721afd1ba9e7606a"
+            },
+            "type": "wordpress-plugin",
+            "license": [
+                "GPL"
+            ],
+            "authors": [
+                {
+                    "name": "Tom Benner",
+                    "email": "tombenner@gmail.com"
+                }
+            ],
+            "description": "An MVC framework for WordPress http://wpmvc.org",
+            "transport-options": {
+                "symlink": true,
+                "relative": false
+            }
         },
         {
             "name": "valu/wp-graphql-offset-pagination",

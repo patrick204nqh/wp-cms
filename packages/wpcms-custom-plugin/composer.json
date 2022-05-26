@@ -1,12 +1,12 @@
 {
-    "name": "patrick204nqh/wpcms-custom-theme",
-    "description": "WP-CMS Theme",
+    "name": "patrick204nqh/wpcms-custom-plugin",
+    "description": "WP-CMS Plugin",
     "minimum-stability": "dev",
-    "type": "wordpress-theme",
+    "type": "wordpress-plugin",
   	"prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "WpcmsTheme\\": "src/"
+            "WpcmsPlugin\\": "app/"
         }
     },
     "authors": [
