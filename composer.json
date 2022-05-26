@@ -5,7 +5,14 @@
 		{
 			"type": "composer",
 			"url": "https://wpackagist.org"
-		}
+		},
+		{
+        "type": "path",
+        "url": "$PWD/packages/*",
+        "options": {
+            "symlink": true
+        }
+    }
 	],
 	"require": {
 		"composer/installers": "~1.0",
@@ -14,12 +21,12 @@
 		"pristas-peter/wp-graphql-gutenberg": "0.3.7",
 		"valu/wp-graphql-offset-pagination": "^0.2",
 		"wpackagist-plugin/advanced-custom-fields": "5.12.2",
-		"wpackagist-plugin/custom-post-type-ui": "1.12.1"
+		"wpackagist-plugin/custom-post-type-ui": "1.12.1",
+		"patrick204nqh/wpcms-custom-theme": "*"
 	},
 	"extra": {
     "installer-paths": {
-        "wp/plugins/{$name}/": ["type:wordpress-plugin"],
-        "wp/themes/{$name}/": ["type:wordpress-theme"]
+        "wp-content/themes/{$name}/": ["type:wordpress-theme"]
     }
 	},
 	"config": {

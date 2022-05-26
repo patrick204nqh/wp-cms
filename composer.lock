@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "294328823e65df9124fefc456e9f6fba",
+    "content-hash": "f4f1ab18ac35671a453242ff71d51485",
     "packages": [
         {
             "name": "appsero/client",
@@ -361,6 +361,32 @@
                 "source": "https://github.com/opis/json-schema/tree/1.1.0"
             },
             "time": "2021-04-14T20:02:50+00:00"
+        },
+        {
+            "name": "patrick204nqh/wpcms-custom-theme",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "/var/www/html/packages/wpcms-custom-theme",
+                "reference": "592481d21520e246699b661a47fa272fddc81adc"
+            },
+            "type": "wordpress-theme",
+            "autoload": {
+                "psr-4": {
+                    "Patrick204nqh\\WpcmsCustomTheme\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Nguyen Quang Huy",
+                    "email": "patrick204nqh@gmail.com"
+                }
+            ],
+            "description": "WP-CMS Theme",
+            "transport-options": {
+                "symlink": true,
+                "relative": false
+            }
         },
         {
             "name": "pristas-peter/wp-graphql-gutenberg",
