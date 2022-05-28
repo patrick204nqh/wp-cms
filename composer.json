@@ -18,7 +18,6 @@
 		"composer/installers": "~1.0",
 		"wp-graphql/wp-graphql": "1.8.2",
 		"wp-graphql/wp-graphql-jwt-authentication": "0.4.0",
-		"pristas-peter/wp-graphql-gutenberg": "0.3.7",
 		"valu/wp-graphql-offset-pagination": "^0.2",
 		"wpackagist-plugin/advanced-custom-fields": "5.12.2",
 		"wpackagist-plugin/custom-post-type-ui": "1.12.1",

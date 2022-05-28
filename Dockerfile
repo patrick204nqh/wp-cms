@@ -9,6 +9,7 @@ COPY --from=composer_builder /usr/bin/composer /usr/local/bin/composer
 
 WORKDIR /var/www/html
 
+COPY packages/ ./packages/
 COPY composer.json composer.lock ./
 
-RUN ["/bin/bash", "-c", "composer install --ignore-platform-reqs --no-scripts"]
+RUN ["/bin/bash", "-c", "composer update"]

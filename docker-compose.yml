@@ -3,12 +3,10 @@ version: "3.9"
 x-wp: &wp-default
   volumes:
     - $PWD/docker/wordpress/wp-config.php:/var/www/html/wp-config.php
-    - $PWD/wp-content/:/var/www/html/wp-content/
-    # - $PWD/wp/plugins/wpcms-custom-plugin/:/var/www/html/wp-content/plugins/wpcms-custom-plugin/
-    # - $PWD/wp/themes/wpcms-custom-theme/:/var/www/html/wp-content/themes/wpcms-custom-theme/
-    - $PWD/packages/:/var/www/html/packages/
     - $PWD/composer.json:/var/www/html/composer.json
     - $PWD/composer.lock:/var/www/html/composer.lock
+    - $PWD/wp-content/:/var/www/html/wp-content/
+    - $PWD/packages/:/var/www/html/packages/
     - wordpress_data:/var/www/html
   environment:
     WORDPRESS_DB_USER: patrick
@@ -46,15 +44,14 @@ services:
       - "8000:80"
 
 
-  wordpress-cli:
-    <<: *wp-default
-    depends_on:
-      - wordpress
-    image: wordpress:cli
-    container_name: wordpress-cli
-    tty: true
-    user: 1000:1000
-    command: tail -f /dev/null
+  # wordpress-cli:
+  #   <<: *wp-default
+  #   depends_on:
+  #     - wordpress
+  #   image: wordpress:cli
+  #   container_name: wordpress-cli
+  #   tty: true
+  #   command: tail -f /dev/null
 
 
   # workbench:
