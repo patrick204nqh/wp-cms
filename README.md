@@ -27,8 +27,12 @@ composer require patrick204nqh/wpcms-custom-plugin:*
 ]
 ```
 
-### WP-CLI commands
+#### WP-CLI commands
 ```
 wp plugin activate [plugin-name]
 wp plugin deactivate [plugin-name]
+```
+- Interactive PHP console
+```
+wp shell
 ```

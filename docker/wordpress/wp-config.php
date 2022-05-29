@@ -108,6 +108,8 @@ $table_prefix = getenv_docker('WORDPRESS_TABLE_PREFIX', 'wp_');
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
 define( 'WP_DEBUG', !!getenv_docker('WORDPRESS_DEBUG', '') );
+define( 'WP_DEBUG_LOG', !!getenv_docker('WORDPRESS_DEBUG_LOG', '') );
+define( 'WP_ENVIRONMENT_TYPE', getenv_docker('WORDPRESS_ENVIRONMENT_TYPE', 'development') );
 
 /* Add any custom values between this line and the "stop editing" line. */
 
@@ -131,3 +133,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
+
+// Autoload composer files
+$composer_autoload_path = ABSPATH . 'vendor/autoload.php';
+if (file_exists($composer_autoload_path)) {
+    require_once $composer_autoload_path;
+}

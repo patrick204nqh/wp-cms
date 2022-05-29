@@ -15,5 +15,7 @@
             "email": "patrick204nqh@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+      "tombenner/wp-mvc": "*" 
+    }
 }

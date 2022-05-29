@@ -12,6 +12,9 @@ x-wp: &wp-default
     WORDPRESS_DB_PASSWORD: password
     WORDPRESS_DB_NAME: wpcms
     WORDPRESS_DB_HOST: db
+    WORDPRESS_DEBUG: 1
+    WORDPRESS_DEBUG_LOG: 1
+    WORDPRESS_ENVIRONMENT_TYPE: 'development'
 
 
 services:
@@ -51,6 +54,13 @@ services:
     tty: true
     command: tail -f /dev/null
 
+
+  mailhog:
+    image: mailhog/mailhog
+    container_name: mailhog
+    ports:
+      - "8025:8025"
+      - "1025:1025"
 
   # workbench:
   #   image: lscr.io/linuxserver/mysql-workbench:latest
